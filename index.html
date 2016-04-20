@@ -1,0 +1,21 @@
+<meta charset="utf-8"/>
+<script type="text/javascript">
+   //有厂长决定运行哪条产品线
+   //由消费者提出需要什么类
+	var factory={};
+	factory.cloth=function(argument){
+           this.worker=50;
+           //alert('we have'=this.worker);
+    }
+	factory.shoe=function(){
+            alert('produce shoe');
+	}
+	factory.transport=function(){
+             alert('transport');
+	}
+     factory.leader=function(para){
+     	return new factory[para]();//构造函数模式：单例模式
+     }
+     var consumer=factory.leader('cloth');
+     alert(consumer.worker);
+</script>
